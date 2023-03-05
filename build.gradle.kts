@@ -25,10 +25,11 @@ dependencies {
     implementation("org.springframework.boot:spring-boot-starter-undertow") {
         exclude("io.undertow", "undertow-websockets-jsr")
     }
+    implementation("org.springframework.boot:spring-boot-starter-validation")
     implementation("org.springframework.boot:spring-boot-starter-data-jpa")
     implementation("org.jetbrains.kotlin:kotlin-reflect")
+    implementation("org.springdoc:springdoc-openapi-starter-webmvc-ui:2.0.2")
     runtimeOnly("com.mysql:mysql-connector-j:8.0.32")
-
     testImplementation("org.springframework.boot:spring-boot-starter-test")
 }
 
