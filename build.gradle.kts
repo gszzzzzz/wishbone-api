@@ -11,8 +11,8 @@ group = "io.gszzzzzz"
 version = "latest"
 
 java {
-    sourceCompatibility = JavaVersion.VERSION_19
-    targetCompatibility = JavaVersion.VERSION_19
+    sourceCompatibility = JavaVersion.VERSION_17
+    targetCompatibility = JavaVersion.VERSION_17
 }
 
 repositories {
@@ -56,7 +56,7 @@ tasks {
     compileKotlin {
         kotlinOptions {
             freeCompilerArgs = listOf("-Xjsr305=strict")
-            jvmTarget = "19"
+            jvmTarget = "17"
         }
     }
 
