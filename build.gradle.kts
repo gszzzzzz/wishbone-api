@@ -8,7 +8,7 @@ plugins {
 }
 
 group = "io.gszzzzzz"
-version = "0.0.1-SNAPSHOT"
+version = "latest"
 
 java {
     sourceCompatibility = JavaVersion.VERSION_19
