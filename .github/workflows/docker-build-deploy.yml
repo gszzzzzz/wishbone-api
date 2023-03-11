@@ -31,15 +31,15 @@ jobs:
       - name: Build Docker image
         run: |
           ./gradlew bootBuildImage \
-            --imageName=asia.ghcr.io/${{ secrets.GCP_PROJECT_ID }}/wishbone:${{ github.sha }}
+            --imageName=asia.gcr.io/${{ secrets.GCP_PROJECT_ID }}/wishbone:${{ github.sha }}
 
       - name: Push Docker image
         run: |
-          docker push asia.ghcr.io/${{ secrets.GCP_PROJECT_ID }}/wishbone:${{ github.sha }}
+          docker push asia.gcr.io/${{ secrets.GCP_PROJECT_ID }}/wishbone:${{ github.sha }}
 
       - name: Deploy to Cloud Run
         run: |
           gcloud run deploy ${{ secrets.GCP_APP_NAME }} \
-            --image asia.ghcr.io/${{ secrets.GCP_PROJECT_ID }}/wishbone:${{ github.sha }} \
+            --image asia.gcr.io/${{ secrets.GCP_PROJECT_ID }}/wishbone:${{ github.sha }} \
             --platform managed \
             --region asia-northeast3
