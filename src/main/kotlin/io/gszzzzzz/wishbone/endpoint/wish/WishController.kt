@@ -1,5 +1,7 @@
 package io.gszzzzzz.wishbone.endpoint.wish
 
+import io.gszzzzzz.wishbone.domain.auth.annotation.RequestUser
+import io.gszzzzzz.wishbone.domain.user.entity.User
 import io.gszzzzzz.wishbone.endpoint.wish.dto.GetWishesResponse
 import io.gszzzzzz.wishbone.endpoint.wish.dto.WishResponse
 import io.swagger.v3.oas.annotations.Operation
@@ -16,8 +18,15 @@ class WishController {
         description = "모든 소원을 조회합니다. 한 페이지 당 10개의 소원을 결과로 제공합니다.",
     )
     @GetMapping("/all")
-    fun getWishes(): GetWishesResponse {
-        TODO()
+    fun getWishes(
+        @RequestUser user: User,
+    ): GetWishesResponse {
+        return GetWishesResponse(
+            totalCount = 0,
+            currentPage = 1,
+            lastPage = 1,
+            items = emptyList(),
+        )
     }
 
     @Operation(
@@ -25,8 +34,16 @@ class WishController {
         description = "내 소원을 조회합니다.",
     )
     @GetMapping
-    fun getMyWish(): WishResponse {
-        TODO()
+    fun getMyWish(
+        @RequestUser user: User,
+    ): WishResponse {
+        return WishResponse(
+            id = 0,
+            title = "",
+            content = "",
+            ownerUserId = 0,
+            createdAt = 0,
+        )
     }
 
     @Operation(

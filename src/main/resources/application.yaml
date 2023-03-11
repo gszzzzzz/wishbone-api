@@ -24,3 +24,7 @@ spring:
       validation-timeout: 1000
       max-lifetime: 170000
       connection-test-query: SELECT 1
+
+kakao:
+  client-id: 354febbe8cb34df9468885738023d034
+  redirect-uri: http://localhost:3000/oauth/callback
