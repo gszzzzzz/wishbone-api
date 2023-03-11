@@ -31,8 +31,7 @@ jobs:
       - name: Build Docker image
         run: |
           ./gradlew bootBuildImage \
-            --imageName=asia.ghcr.io/${{ secrets.GCP_PROJECT_ID }}/wishbone \
-            --imageTag=${{ github.sha }}
+            --imageName=asia.ghcr.io/${{ secrets.GCP_PROJECT_ID }}/wishbone:${{ github.sha }}
 
       - name: Push Docker image
         run: |
